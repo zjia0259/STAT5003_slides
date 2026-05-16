@@ -8,50 +8,79 @@
 
   <div style="display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:flex-start;flex:1;">
 
-    <div style="width:900px;padding:10px 22px;background:#f8fbff;border:1px solid #d6e4fb;border-radius:14px;box-sizing:border-box;">
-      <div style="font-size:19px;font-weight:760;color:#315f9f;margin-bottom:5px;">Raw Data — Stack Overflow Developer Survey 2025</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 24px;font-size:15px;line-height:1.3;color:#344054;">
-        <div><strong style="color:#1f2a44;">26,670 respondents</strong> after removing missing satisfaction scores</div>
-        <div><strong style="color:#1f2a44;">170+ survey columns</strong> covering demographics, work, AI attitudes, and more</div>
-        <div><strong style="color:#1f2a44;">Target:</strong> JobSat (0–10) → 3-class ordinal variable</div>
+    <!-- Raw Data -->
+    <div style="width:900px;padding:10px 22px;box-sizing:border-box;
+      background: linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);
+      border:1px solid #d0ddf0;
+      border-left:3px solid #4a72b8;
+      border-radius:14px;
+      box-shadow: 0 2px 8px rgba(49,95,159,0.07), 0 1px 2px rgba(0,0,0,0.03);">
+      <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:5px;">Raw Data — Stack Overflow Developer Survey 2025</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 24px;font-size:16px;line-height:1.3;color:#344054;">
+        <div><strong style="color:#1f2a44;">26,670 valid responses</strong> after removing missing JobSat</div>
+        <div><strong style="color:#1f2a44;">170+ raw columns</strong> across demographics, work, and AI attitudes</div>
+        <div><strong style="color:#1f2a44;">Target:</strong> JobSat 0–10 → 3-class ordinal label</div>
       </div>
     </div>
 
     <div style="font-size:18px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
-    <div style="width:900px;padding:10px 22px;background:#ffffff;border:1px solid #d7dee8;border-radius:14px;box-sizing:border-box;">
-      <div style="font-size:19px;font-weight:760;color:#315f9f;margin-bottom:5px;">Train / Test Split</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 24px;font-size:15px;line-height:1.3;color:#344054;">
-        <div><strong style="color:#1f2a44;">80 / 20 stratified split</strong> — class proportions preserved in both sets</div>
-        <div><strong style="color:#1f2a44;">Split before any preprocessing</strong> — prevents information leakage from test data</div>
+    <!-- Train / Test Split -->
+    <div style="width:900px;padding:10px 22px;box-sizing:border-box;
+      background: linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);
+      border:1px solid #d0ddf0;
+      border-left:3px solid #4a72b8;
+      border-radius:14px;
+      box-shadow: 0 2px 8px rgba(49,95,159,0.07), 0 1px 2px rgba(0,0,0,0.03);">
+      <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:5px;">Train / Test Split</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 24px;font-size:16px;line-height:1.3;color:#344054;">
+        <div><strong style="color:#1f2a44;">80 / 20 stratified split</strong> — class balance preserved</div>
+        <div><strong style="color:#1f2a44;">Split before preprocessing</strong> — prevents test-data leakage</div>
       </div>
     </div>
 
     <div style="font-size:18px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
-    <div style="width:900px;padding:10px 22px;background:#ffffff;border:1px solid #d7dee8;border-radius:14px;box-sizing:border-box;">
-      <div style="font-size:19px;font-weight:760;color:#315f9f;margin-bottom:5px;"> Data Cleaning — all rules learned from training set only</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 24px;font-size:15px;line-height:1.3;color:#344054;">
-        <div><strong style="color:#1f2a44;">Missing values:</strong> filled with median; a binary flag records which rows were missing</div>
-        <div><strong style="color:#1f2a44;">Outliers:</strong> extreme values capped at the 99th percentile to prevent distortion</div>
-        <div><strong style="color:#1f2a44;">Skewed income:</strong> log-transformed to compress the long tail of salary data</div>
+    <!-- Data Cleaning -->
+    <div style="width:900px;padding:10px 22px;box-sizing:border-box;
+      background: linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);
+      border:1px solid #d0ddf0;
+      border-left:3px solid #4a72b8;
+      border-radius:14px;
+      box-shadow: 0 2px 8px rgba(49,95,159,0.07), 0 1px 2px rgba(0,0,0,0.03);">
+      <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:5px;">Data Cleaning — training-set rules only</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 24px;font-size:16px;line-height:1.3;color:#344054;">
+        <div><strong style="color:#1f2a44;">Missing values:</strong> median imputation + missing flag</div>
+        <div><strong style="color:#1f2a44;">Outliers:</strong> numeric extremes capped at 99th percentile</div>
+        <div><strong style="color:#1f2a44;">Skewed income:</strong> salary log-transformed</div>
       </div>
     </div>
 
     <div style="font-size:18px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
-    <div style="width:900px;padding:10px 22px;background:#ffffff;border:1px solid #d7dee8;border-radius:14px;box-sizing:border-box;">
-      <div style="font-size:19px;font-weight:760;color:#315f9f;margin-bottom:5px;"> Category Encoding</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 24px;font-size:15px;line-height:1.3;color:#344054;">
-        <div><strong style="color:#1f2a44;">Categorical features:</strong> rare answers grouped into "Other" (keep top-15); missing marked as "Missing"</div>
-        <div><strong style="color:#1f2a44;">Multi-choice questions:</strong> split into separate yes/no columns (e.g. each DevType gets its own column)</div>
+    <!-- Category Encoding -->
+    <div style="width:900px;padding:10px 22px;box-sizing:border-box;
+      background: linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);
+      border:1px solid #d0ddf0;
+      border-left:3px solid #4a72b8;
+      border-radius:14px;
+      box-shadow: 0 2px 8px rgba(49,95,159,0.07), 0 1px 2px rgba(0,0,0,0.03);">
+      <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:5px;">Category Encoding</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 24px;font-size:16px;line-height:1.3;color:#344054;">
+        <div><strong style="color:#1f2a44;">Categorical features:</strong> top-15 retained; rare → "Other"; missing → "Missing"</div>
+        <div><strong style="color:#1f2a44;">Multi-choice questions:</strong> semicolon-split → binary yes/no columns</div>
       </div>
     </div>
 
     <div style="font-size:18px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
-    <div style="width:700px;text-align:center;padding:10px 20px;background:#f8fbff;border:1px solid #d6e4fb;border-radius:14px;box-sizing:border-box;">
-      <p style="font-size:18px;line-height:1.22;font-weight:750;color:#1f2a44;margin:0;padding:0;">Clean, consistent train_data and test_data ready for all 5 models</p>
+    <!-- Final output -->
+    <div style="width:700px;text-align:center;padding:10px 20px;box-sizing:border-box;
+      background: linear-gradient(135deg, #eaf0fb 0%, #f6f9ff 100%);
+      border:1px solid #b8cceb;
+      border-radius:14px;
+      box-shadow: 0 3px 12px rgba(49,95,159,0.10), 0 1px 2px rgba(0,0,0,0.03);">
+      <p style="font-size:19px;line-height:1.22;font-weight:750;color:#1f2a44;margin:0;padding:0;">Clean, consistent train_data / test_data shared by all 5 models</p>
     </div>
 
   </div>

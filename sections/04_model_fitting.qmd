@@ -24,7 +24,7 @@
       <div style="min-height:78px;padding:12px 9px;display:flex;align-items:center;justify-content:center;text-align:center;background:#ffffff;border:1px solid #d7dee8;border-radius:14px;box-sizing:border-box;"><div style="font-size:17px;line-height:1.16;font-weight:750;color:#1f2a44;">Fully Connected Neural Network</div></div>
     </div>
 
-    <div style="width:740px;text-align:center;font-size:18px;line-height:1.3;color:#344054;background:#ffffff;border-top:1px solid #d7dee8;border-bottom:1px solid #d7dee8;padding:10px 16px;margin-top:3px;box-sizing:border-box;">All models used the same split, same feature matrix, and same metric to keep the comparison fair.</div>
+    <div style="width:740px;text-align:center;font-size:18px;line-height:1.3;color:#344054;background:#ffffff;border-top:1px solid #d7dee8;border-bottom:1px solid #d7dee8;padding:10px 16px;margin-top:3px;box-sizing:border-box;">Same split, same features, same metric — fair comparison.</div>
     <div style="font-size:21px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
     <div style="width:570px;text-align:center;padding:13px 22px;background:#f8fbff;border:1px solid #d6e4fb;border-radius:14px;color:#263245;box-sizing:border-box;">
@@ -40,31 +40,62 @@
 
 ```{=html}
 <div style="width:100%;height:720px;box-sizing:border-box;padding:26px 48px 30px 48px;background:#ffffff;color:#1f2937;font-family:Arial, Helvetica, sans-serif;display:flex;flex-direction:column;text-align:left;">
-  <div style="border-bottom:1px solid #d7dee8;padding-bottom:8px;margin-bottom:16px;">
+  <div style="border-bottom:1px solid #d7dee8;padding-bottom:8px;margin-bottom:20px;">
     <h1 style="font-size:28px;line-height:1.12;font-weight:720;color:#1f2a44;letter-spacing:-0.1px;margin:0;padding:0;white-space:nowrap;">Selected Models and Why We Used Them</h1>
   </div>
 
-  <div style="display:grid;gap:0;border-top:1px solid #d7dee8;border-bottom:1px solid #d7dee8;margin-top:4px;">
-    <div style="display:grid;grid-template-columns:330px 1fr;gap:26px;padding:19px 0;border-bottom:1px solid #d7dee8;align-items:start;">
-      <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Multinomial Logistic Regression</div>
-      <div style="font-size:20px;line-height:1.32;color:#344054;">A simple linear baseline, used to check whether satisfaction can be predicted from additive effects of the features.</div>
+  <div style="display:flex;flex-direction:column;gap:0;margin-top:4px;">
+
+    <!-- Row 1 -->
+    <div style="display:grid;grid-template-columns:330px 1fr;gap:0;align-items:stretch;">
+      <div style="padding:20px 22px 20px 18px;border-left:3px solid #4a72b8;background:linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);border-bottom:1px solid #e8ecf2;">
+        <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Multinomial Logistic Regression</div>
+      </div>
+      <div style="padding:20px 22px;border-bottom:1px solid #e8ecf2;display:flex;align-items:center;">
+        <div style="font-size:20px;line-height:1.32;color:#344054;">Linear baseline — tests whether additive feature effects can predict satisfaction</div>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:330px 1fr;gap:26px;padding:19px 0;border-bottom:1px solid #d7dee8;align-items:start;">
-      <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Random Forest</div>
-      <div style="font-size:20px;line-height:1.32;color:#344054;">An ensemble tree model, used because it combines many trees to reduce overfitting and capture non-linear patterns in the survey features.</div>
+
+    <!-- Row 2 -->
+    <div style="display:grid;grid-template-columns:330px 1fr;gap:0;align-items:stretch;">
+      <div style="padding:20px 22px 20px 18px;border-left:3px solid #4a72b8;background:linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);border-bottom:1px solid #e8ecf2;">
+        <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Random Forest</div>
+      </div>
+      <div style="padding:20px 22px;border-bottom:1px solid #e8ecf2;display:flex;align-items:center;">
+        <div style="font-size:20px;line-height:1.32;color:#344054;">Ensemble of trees — reduces overfitting and captures non-linear patterns</div>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:330px 1fr;gap:26px;padding:19px 0;border-bottom:1px solid #d7dee8;align-items:start;">
-      <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Gradient Boosting</div>
-      <div style="font-size:20px;line-height:1.32;color:#344054;">A boosted tree model, used because it can capture feature interactions and usually works well with structured survey data.</div>
+
+    <!-- Row 3 -->
+    <div style="display:grid;grid-template-columns:330px 1fr;gap:0;align-items:stretch;">
+      <div style="padding:20px 22px 20px 18px;border-left:3px solid #4a72b8;background:linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);border-bottom:1px solid #e8ecf2;">
+        <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Gradient Boosting</div>
+      </div>
+      <div style="padding:20px 22px;border-bottom:1px solid #e8ecf2;display:flex;align-items:center;">
+        <div style="font-size:20px;line-height:1.32;color:#344054;">Sequential trees — captures feature interactions, strong on structured data</div>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:330px 1fr;gap:26px;padding:19px 0;border-bottom:1px solid #d7dee8;align-items:start;">
-      <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Naive Bayes</div>
-      <div style="font-size:20px;line-height:1.32;color:#344054;">A simple probabilistic benchmark, used to test whether a fast model can provide a useful comparison point.</div>
+
+    <!-- Row 4 -->
+    <div style="display:grid;grid-template-columns:330px 1fr;gap:0;align-items:stretch;">
+      <div style="padding:20px 22px 20px 18px;border-left:3px solid #4a72b8;background:linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);border-bottom:1px solid #e8ecf2;">
+        <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Naive Bayes</div>
+      </div>
+      <div style="padding:20px 22px;border-bottom:1px solid #e8ecf2;display:flex;align-items:center;">
+        <div style="font-size:20px;line-height:1.32;color:#344054;">Probabilistic benchmark — tests whether a simple fast model is competitive</div>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:330px 1fr;gap:26px;padding:19px 0;align-items:start;">
-      <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Fully Connected Neural Network</div>
-      <div style="font-size:20px;line-height:1.32;color:#344054;">A non-linear model, used to test whether more flexible learning improves prediction beyond traditional models.</div>
+
+    <!-- Row 5 -->
+    <div style="display:grid;grid-template-columns:330px 1fr;gap:0;align-items:stretch;">
+      <div style="padding:20px 22px 20px 18px;border-left:3px solid #4a72b8;background:linear-gradient(135deg, #f6f9ff 0%, #ffffff 100%);">
+        <div style="font-size:22px;line-height:1.18;font-weight:760;color:#1f2a44;">Fully Connected Neural Network</div>
+      </div>
+      <div style="padding:20px 22px;display:flex;align-items:center;">
+        <div style="font-size:20px;line-height:1.32;color:#344054;">Non-linear model — tests whether flexible learning improves beyond traditional models</div>
+      </div>
     </div>
+
   </div>
 </div>
 ```

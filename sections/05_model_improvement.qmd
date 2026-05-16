@@ -6,11 +6,11 @@
     <h1 style="font-size:28px;line-height:1.12;font-weight:720;color:#1f2a44;letter-spacing:-0.1px;margin:0;padding:0;white-space:nowrap;">Feature Engineering &amp; Selection</h1>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;flex:1;">
+  <div style="display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;flex:1;">
 
-    <div style="width:88%;padding:12px 24px;background:#f8fbff;border:1px solid #d6e4fb;border-radius:12px;box-sizing:border-box;">
+    <div style="width:90%;padding:12px 24px 12px 24px;background:#fbfdff;border:1px solid #d6e4fb;border-left:3px solid #315f9f;border-radius:12px;box-sizing:border-box;box-shadow:0 4px 10px rgba(49,95,159,0.10);">
       <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:6px;">Feature Selection — 22 features from 170+ columns</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 28px;font-size:17px;line-height:1.35;color:#344054;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 28px;font-size:16px;line-height:1.32;color:#344054;">
         <div><strong style="color:#1f2a44;">Demographics:</strong> Age, EdLevel, WorkExp, YearsCode</div>
         <div><strong style="color:#1f2a44;">AI Attitudes:</strong> AISelect, AISent, AIAcc, AIThreat</div>
         <div><strong style="color:#1f2a44;">Employment:</strong> Employment, RemoteWork, OrgSize, ICorPM</div>
@@ -24,31 +24,31 @@
       </div>
     </div>
 
-    <div style="font-size:19px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
+    <div style="font-size:20px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
-    <div style="width:88%;padding:11px 24px;background:#ffffff;border:1px solid #d7dee8;border-radius:12px;box-sizing:border-box;">
-      <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:6px;">Feature Engineering — all parameters from training set only</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 20px;font-size:17px;line-height:1.35;color:#344054;">
-        <div><strong style="color:#1f2a44;">Numeric:</strong> median imputation, 99th percentile capping, log-transform salary</div>
-        <div><strong style="color:#1f2a44;">Categorical:</strong> rare categories → "Other" (top-15), missing → "Missing"</div>
-        <div><strong style="color:#1f2a44;">Multi-response:</strong> semicolon-split → binary columns, top-15 options retained</div>
+    <div style="width:90%;padding:12px 24px;background:#fbfdff;border:1px solid #d6e4fb;border-left:3px solid #315f9f;border-radius:12px;box-sizing:border-box;box-shadow:0 4px 10px rgba(49,95,159,0.10);">
+      <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:6px;">Feature Engineering — training-set parameters only</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px 20px;font-size:16px;line-height:1.32;color:#344054;">
+        <div><strong style="color:#1f2a44;">Numeric:</strong> median imputation, 99th percentile capping, salary log-transform</div>
+        <div><strong style="color:#1f2a44;">Categorical:</strong> rare → "Other" (top-15), missing → "Missing"</div>
+        <div><strong style="color:#1f2a44;">Multi-response:</strong> semicolon-split → binary columns; top-15 retained</div>
       </div>
     </div>
 
-    <div style="font-size:19px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
+    <div style="font-size:20px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
-    <div style="width:88%;padding:11px 24px;background:#ffffff;border:1px solid #d7dee8;border-radius:12px;box-sizing:border-box;">
+    <div style="width:90%;padding:12px 24px;background:#fbfdff;border:1px solid #d6e4fb;border-left:3px solid #315f9f;border-radius:12px;box-sizing:border-box;box-shadow:0 4px 10px rgba(49,95,159,0.10);">
       <div style="font-size:20px;font-weight:760;color:#315f9f;margin-bottom:6px;">Feature Filtering — 3 automated filters</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 20px;font-size:17px;line-height:1.35;color:#344054;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px 20px;font-size:16px;line-height:1.32;color:#344054;">
         <div><strong style="color:#1f2a44;">Near-zero variance:</strong> remove if &gt;95% identical</div>
         <div><strong style="color:#1f2a44;">High correlation:</strong> drop one if r &gt; 0.90</div>
         <div><strong style="color:#1f2a44;">High missing rate:</strong> remove if &gt;80% missing</div>
       </div>
     </div>
 
-    <div style="font-size:19px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
+    <div style="font-size:20px;line-height:1;color:#315f9f;font-weight:800;">↓</div>
 
-    <div style="width:68%;text-align:center;padding:11px 20px;background:#f8fbff;border:1px solid #d6e4fb;border-radius:12px;box-sizing:border-box;">
+    <div style="width:70%;text-align:center;padding:11px 20px;background:#f4f8ff;border:1px solid #c8dcfa;border-radius:12px;box-sizing:border-box;box-shadow:0 4px 10px rgba(49,95,159,0.10);">
       <p style="font-size:18px;line-height:1.22;font-weight:750;color:#1f2a44;margin:0;padding:0;">170+ raw → 22 selected → ~120 encoded → filtered → shared feature set for all 5 models</p>
     </div>
 
@@ -63,47 +63,48 @@
     <h1 style="font-size:28px;line-height:1.12;font-weight:720;color:#1f2a44;letter-spacing:-0.1px;margin:0;padding:0;white-space:nowrap;">Hyperparameter Tuning</h1>
   </div>
 
-  <div style="display:grid;gap:0;border-top:1px solid #d7dee8;border-bottom:1px solid #d7dee8;flex:1;align-content:center;">
+  <div style="display:grid;gap:0;border-left:3px solid #315f9f;background:#fbfdff;flex:1;align-content:stretch;">
 
-    <div style="display:grid;grid-template-columns:240px 1fr 1fr;gap:26px;padding:14px 0;border-bottom:1px solid #d7dee8;align-items:center;">
-      <div style="font-size:18px;line-height:1.18;font-weight:760;color:#315f9f;">Model</div>
-      <div style="font-size:18px;line-height:1.18;font-weight:760;color:#315f9f;">What We Tuned</div>
-      <div style="font-size:18px;line-height:1.18;font-weight:760;color:#315f9f;">Imbalance Strategy</div>
+    <div style="display:grid;grid-template-columns:250px 1fr 1fr;gap:26px;padding:12px 28px;border-bottom:1px solid #d7dee8;align-items:center;background:#ffffff;">
+      <div style="font-size:17px;line-height:1.18;font-weight:760;color:#315f9f;">Model</div>
+      <div style="font-size:17px;line-height:1.18;font-weight:760;color:#315f9f;">What We Tuned</div>
+      <div style="font-size:17px;line-height:1.18;font-weight:760;color:#315f9f;">Imbalance Strategy</div>
     </div>
 
-    <div style="display:grid;grid-template-columns:240px 1fr 1fr;gap:26px;padding:18px 0;border-bottom:1px solid #d7dee8;align-items:center;">
+    <div style="display:grid;grid-template-columns:250px 1fr 1fr;gap:26px;padding:17px 28px;border-bottom:1px solid #e6edf5;align-items:center;">
       <div style="font-size:20px;line-height:1.18;font-weight:760;color:#1f2a44;">Neural Network</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Learning rate, dropout rate, network size</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Focal Loss (γ=2) + Neutral ×1.5 class weight</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Learning rate, dropout rate, network size</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Focal Loss (γ=2) + Neutral ×1.5 class weight</div>
     </div>
 
-    <div style="display:grid;grid-template-columns:240px 1fr 1fr;gap:26px;padding:18px 0;border-bottom:1px solid #d7dee8;align-items:center;">
+    <div style="display:grid;grid-template-columns:250px 1fr 1fr;gap:26px;padding:17px 28px;border-bottom:1px solid #e6edf5;align-items:center;">
       <div style="font-size:20px;line-height:1.18;font-weight:760;color:#1f2a44;">Gradient Boosting</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Number of trees, depth, shrinkage, min node size</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Square-root class weights</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Number of trees, depth, shrinkage, min node size</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Square-root class weights</div>
     </div>
 
-    <div style="display:grid;grid-template-columns:240px 1fr 1fr;gap:26px;padding:18px 0;border-bottom:1px solid #d7dee8;align-items:center;">
+    <div style="display:grid;grid-template-columns:250px 1fr 1fr;gap:26px;padding:17px 28px;border-bottom:1px solid #e6edf5;align-items:center;">
       <div style="font-size:20px;line-height:1.18;font-weight:760;color:#1f2a44;">Random Forest</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Features per split, split rule, min node size, weight power</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Class weights + balanced downsampling</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Features per split, split rule, min node size, weight power</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Class weights + balanced downsampling</div>
     </div>
 
-    <div style="display:grid;grid-template-columns:240px 1fr 1fr;gap:26px;padding:18px 0;border-bottom:1px solid #d7dee8;align-items:center;">
+    <div style="display:grid;grid-template-columns:250px 1fr 1fr;gap:26px;padding:17px 28px;border-bottom:1px solid #e6edf5;align-items:center;">
       <div style="font-size:20px;line-height:1.18;font-weight:760;color:#1f2a44;">Logistic Regression</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Regularisation strength (decay)</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Square-root class weights</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Regularisation strength (decay)</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Square-root class weights</div>
     </div>
 
-    <div style="display:grid;grid-template-columns:240px 1fr 1fr;gap:26px;padding:18px 0;align-items:center;">
+    <div style="display:grid;grid-template-columns:250px 1fr 1fr;gap:26px;padding:17px 28px;align-items:center;">
       <div style="font-size:20px;line-height:1.18;font-weight:760;color:#1f2a44;">Naive Bayes</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">Laplace smoothing, kernel density estimation</div>
-      <div style="font-size:19px;line-height:1.32;color:#344054;">SMOTE oversampling</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">Laplace smoothing, kernel density estimation</div>
+      <div style="font-size:18px;line-height:1.32;color:#344054;">SMOTE oversampling</div>
     </div>
 
   </div>
 </div>
 ```
+
 ## {.nostretch}
 ```{=html}
 <div style="width:100%;height:720px;box-sizing:border-box;padding:22px 48px 18px 48px;background:#ffffff;color:#1f2937;font-family:Arial, Helvetica, sans-serif;display:flex;flex-direction:column;text-align:left;">

@@ -642,31 +642,18 @@ ggsave(
     <h1 style="font-size:27px;line-height:1.05;font-weight:720;color:#1f2a44;letter-spacing:-0.1px;margin:0;padding:0;white-space:nowrap;">EDA &amp; Data Understanding</h1>
   </div>
 
-  <div style="margin-bottom:6px;">
-    <div style="font-size:17.5px;font-weight:760;color:#315f9f;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:2px;">Target structure and key patterns</div>
-    <div style="font-size:15.2px;line-height:1.22;font-weight:520;color:#344054;">
-      We use three classes for modelling. This makes the target easier to understand, but the task is still difficult because single features cannot clearly separate the groups.
-    </div>
-  </div>
-
-  <div style="height:392px;display:flex;align-items:center;justify-content:center;margin:0 0 9px 0;overflow:hidden;">
+  <div style="height:460px;display:flex;align-items:center;justify-content:center;margin:0 0 9px 0;overflow:hidden;">
     <img src="figures/eda_slide_1.png" style="width:100%;height:100%;object-fit:contain;object-position:center center;display:block;" />
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;height:155px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
 
-    <div style="background:#f8fbff;border:1px solid #d6e4fb;border-radius:12px;padding:13px 15px;box-sizing:border-box;overflow:hidden;">
-      <div style="font-size:14.8px;font-weight:760;color:#315f9f;margin-bottom:6px;">Why use three classes?</div>
-      <div style="font-size:13.8px;line-height:1.26;color:#344054;font-weight:500;">
-        The original five groups are too detailed for modelling. Some groups are small and close to each other, so we combine them into Negative, Neutral, and Positive. This makes the prediction target clearer.
-      </div>
+    <div style="background:#f8fbff;border:1px solid #d6e4fb;border-radius:12px;padding:14px 18px;box-sizing:border-box;display:flex;align-items:center;">
+      <div style="font-size:19px;font-weight:760;color:#315f9f;">Why three classes?</div>
     </div>
 
-    <div style="background:#fffaf0;border:1px solid #f1d9a5;border-radius:12px;padding:13px 15px;box-sizing:border-box;overflow:hidden;">
-      <div style="font-size:14.8px;font-weight:760;color:#9a6515;margin-bottom:6px;">Why is it still difficult?</div>
-      <div style="font-size:13.8px;line-height:1.26;color:#344054;font-weight:500;">
-        Salary and work experience overlap across the three groups. This means one single feature cannot clearly tell whether a developer is Negative, Neutral, or Positive.
-      </div>
+    <div style="background:#fffaf0;border:1px solid #f1d9a5;border-radius:12px;padding:14px 18px;box-sizing:border-box;display:flex;align-items:center;">
+      <div style="font-size:19px;font-weight:760;color:#9a6515;">Why is it still difficult?</div>
     </div>
 
   </div>
@@ -683,20 +670,22 @@ ggsave(
     <h1 style="font-size:27px;line-height:1.05;font-weight:720;color:#1f2a44;letter-spacing:-0.1px;margin:0;padding:0;white-space:nowrap;">EDA &amp; Data Understanding</h1>
   </div>
 
-  <div style="margin-bottom:6px;">
-    <div style="font-size:17.5px;font-weight:760;color:#315f9f;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:0;">Feature relationships and class separability</div>
-  </div>
-
-  <div style="height:430px;display:flex;align-items:center;justify-content:center;margin:0 0 10px 0;overflow:hidden;">
+  <div style="height:460px;display:flex;align-items:center;justify-content:center;margin:0 0 10px 0;overflow:hidden;">
     <img src="figures/eda_slide_2.png" style="width:100%;height:100%;object-fit:contain;object-position:center center;display:block;" />
   </div>
 
-  <div style="height:150px;background:#f8fbff;border:1px solid #d6e4fb;border-radius:12px;padding:14px 18px;box-sizing:border-box;overflow:hidden;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
 
-    <div style="font-size:14.8px;font-weight:760;color:#315f9f;margin-bottom:7px;">Main finding</div>
+    <div style="background:#f8fbff;border:1px solid #d6e4fb;border-radius:12px;padding:14px 18px;box-sizing:border-box;display:flex;align-items:center;">
+      <div style="font-size:19px;font-weight:760;color:#315f9f;">No single feature decides</div>
+    </div>
 
-    <div style="font-size:13.8px;line-height:1.32;color:#344054;font-weight:500;">
-      We explored individual features and found that no single feature can decide job satisfaction. Numeric features are related to each other, so the model may need to learn from several features together. The PCA plot also shows strong overlap between Negative, Neutral, and Positive groups, which means this classification task is difficult.
+    <div style="background:#f8fbff;border:1px solid #d6e4fb;border-radius:12px;padding:14px 18px;box-sizing:border-box;display:flex;align-items:center;">
+      <div style="font-size:19px;font-weight:760;color:#315f9f;">Features work together</div>
+    </div>
+
+    <div style="background:#fffaf0;border:1px solid #f1d9a5;border-radius:12px;padding:14px 18px;box-sizing:border-box;display:flex;align-items:center;">
+      <div style="font-size:19px;font-weight:760;color:#9a6515;">Classes heavily overlap</div>
     </div>
 
   </div>
