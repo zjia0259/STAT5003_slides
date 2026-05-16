@@ -3,6 +3,7 @@ title: "STAT5003 Group Presentation"
 format:
   revealjs:
     controls: true
+    embed-resources: true
     navigation-mode: linear
 ---
 

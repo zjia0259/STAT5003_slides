@@ -1,0 +1,48 @@
+---
+title: "results_image_gen"
+output: html_document
+date: "2026-05-15"
+---
+
+
+## R Markdown
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+# rename + distribution
+fi_data <- data.frame(
+  variable = c("Leaving Intention", "Salary", "Unemployed Status",
+               "Years Coding", "Work Experience", "Considered Career Change",
+               "Feels AI is a Threat", "Tools Used at Work",
+               "Tech Purchase Influence", "Dislikes AI"),
+  importance = c(100, 25, 18, 13, 11, 9, 8, 7, 7, 5),
+  group = c("Career", "Pay", "Career", "Experience", "Experience",
+            "Career", "AI Attitude", "Other", "Other", "AI Attitude")
+)
+
+ggplot(fi_data, aes(x = reorder(variable, importance),
+                     y = importance, fill = group)) +
+  geom_col(width = 0.7) +
+  coord_flip() +
+  scale_fill_manual(values = c(
+    "Career" = "#1f4e79",
+    "Pay" = "#2e86ab",
+    "Experience" = "#a8c5e0",
+    "AI Attitude" = "#e67e22",  # highlight AI
+    "Other" = "#cccccc"
+  )) +
+  labs(x = NULL, y = "Importance",
+       title = "What Predicts Job Satisfaction?") +
+  theme_minimal(base_size = 16) +
+  theme(
+    legend.position = "top",
+    legend.title = element_blank(),
+    plot.title = element_text(face = "bold", size = 22, color = "#1f2a44"),
+    axis.text.y = element_text(size = 14)
+  )
+```
+
+```
+
